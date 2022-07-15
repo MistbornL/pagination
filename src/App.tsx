@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import ReactPaginate from "react-paginate";
 
 function App() {
   const items = [];
@@ -17,10 +18,22 @@ function App() {
       return <p key={index}>item{item}</p>;
     });
 
+  const pageCount = Math.ceil(items.length / itemsPerPage);
+
+  const onPageChange = (e: any) => {
+    setPageNum(e.selected);
+  };
   return (
     <div className="App">
       <div className="items"> {displayUsers}</div>
-      <div className="page"></div>
+      <div className="page">
+        <ReactPaginate
+          pageCount={pageCount}
+          previousAriaLabel={"Previous"}
+          nextAriaLabel={"Next"}
+          onPageChange={onPageChange}
+        ></ReactPaginate>
+      </div>
     </div>
   );
 }
