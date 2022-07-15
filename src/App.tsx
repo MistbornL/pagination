@@ -4,7 +4,7 @@ import ReactPaginate from "react-paginate";
 
 function App() {
   const items = [];
-  for (let i = 1; i < 50; i++) {
+  for (let i = 1; i < 1000; i++) {
     items.push(i);
   }
 
@@ -25,7 +25,10 @@ function App() {
   };
   return (
     <div className="App">
-      <div className="items"> {displayUsers}</div>
+      <div className="items" style={{ height: "360px" }}>
+        {" "}
+        {displayUsers}
+      </div>
       <div className="page">
         <ReactPaginate
           pageCount={pageCount}
