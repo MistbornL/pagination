@@ -2,16 +2,24 @@ import React, { useState } from "react";
 import "./App.css";
 
 function App() {
-  const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  const [currentPage, setCurrentPage] = useState<boolean>(false);
+  const items = [];
+  for (let i = 1; i < 50; i++) {
+    items.push(i);
+  }
+
+  const [pageNum, setPageNum] = useState<number>(0);
+  const itemsPerPage = 10;
+  const pagesVisited = pageNum * itemsPerPage;
+
+  const displayUsers = items
+    .slice(pagesVisited, pagesVisited + itemsPerPage)
+    .map((item, index) => {
+      return <p key={index}>item{item}</p>;
+    });
+
   return (
     <div className="App">
-      <div className="items">
-        {" "}
-        {items.map((item, index) => {
-          return <p key={index}>item{item}</p>;
-        })}
-      </div>
+      <div className="items"> {displayUsers}</div>
       <div className="page"></div>
     </div>
   );
