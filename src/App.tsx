@@ -32,6 +32,9 @@ function App() {
           previousAriaLabel={"Previous"}
           nextAriaLabel={"Next"}
           onPageChange={onPageChange}
+          containerClassName={"paginationBttn"}
+          previousLinkClassName={"previousBttn"}
+          nextLinkClassName={"nextBttn"}
         ></ReactPaginate>
       </div>
     </div>

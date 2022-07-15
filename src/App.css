@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.paginationBttn {
+  margin-top: 7em;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+}
+
+.paginationBttn a {
+  cursor: pointer;
+  color: #282c34;
+}
